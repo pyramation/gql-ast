@@ -1,10 +1,5 @@
-import fun from '../src';
-import cases from 'jest-in-case';
+import * as ast from '../src';
 
-cases(
-  'first test',
-  options => {
-    fun(options);
-  },
-  [{ name: 'strings' }, { name: 'booleans' }, { name: 'noUnderscores' }]
-);
+it('works', () => {
+  expect(ast.document({ definitions: {} })).toMatchSnapshot();
+});
